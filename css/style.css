@@ -57,7 +57,7 @@ body{
     margin-top: -25px;
 }
 
-.moment-title{
+.event-title{
     border-radius: 5px;
     border: 1px solid var(--bright);
 
@@ -70,7 +70,7 @@ body{
     overflow-y: overlay;
 }
 
-.moment-title:hover{
+.event-title:hover{
     cursor: pointer;
     transition: all 0.5s ease;
     background-color: var(--darker);
@@ -90,7 +90,7 @@ body{
     margin: 9px 10px;
 }
 
-.moment{
+.event-container{
     min-width:12rem;
     max-width: 12rem;
 }

@@ -22,19 +22,19 @@ export const loadInfo = () => {
     let timeline = document.querySelector('.timeline');
     timeline.replaceChildren();
     addYears();
-    addMoments();
+    addEvents();
 }
 
 const addYears = () => {
     const firstYear = info[0].year + (offset * range);
     
-    const momentsQuantity = (getScreenWidth() / 192) - 2; //192 es la cantidad de pixeles de ancho de cada moment. 1rem = 16px. 12rem = 12 * 16px
+    const eventsQty = (getScreenWidth() / 192) - 2; //192 es la cantidad de pixeles de ancho de cada event. 1rem = 16px. 12rem = 12 * 16px
     
     let timeline = document.querySelector('.timeline');
 
-    for (let i = firstYear; i < firstYear + (momentsQuantity * range); i += range) {
-        let moment = document.createElement('div');
-        moment.classList.add('moment');
+    for (let i = firstYear; i < firstYear + (eventsQty * range); i += range) {
+        let event = document.createElement('div');
+        event.classList.add('event-container');
 
         let year = document.createElement('p');
         year.innerText = i;
@@ -43,35 +43,35 @@ const addYears = () => {
         let mark = document.createElement('div');
         mark.classList.add('mark');
 
-        moment.appendChild(year);
-        moment.appendChild(mark);
+        event.appendChild(year);
+        event.appendChild(mark);
 
-        timeline.appendChild(moment);
+        timeline.appendChild(event);
     }
 
 }
 
-const addMoments = () => {
+const addEvents = () => {
     let years = Array.from(document.querySelectorAll('.year'));
 
     for(var i in years){
         let year = years[i];
         let nextYear = parseInt(year.innerText) + range;
         
-        const yearMoment = info.filter(x => x.year >= year.innerText && x.year < nextYear);
+        const eventsInRange = info.filter(x => x.year >= year.innerText && x.year < nextYear);
 
-        if(yearMoment){
-            for(var j in yearMoment){
-                let moment = year.parentElement;
+        if(eventsInRange){
+            for(var j in eventsInRange){
+                let event = year.parentElement;
                 let title = document.createElement('p');
-                title.innerText = yearMoment[j].title;
-                title.classList.add('moment-title');
+                title.innerText = eventsInRange[j].title;
+                title.classList.add('event-title');
                 
                 title.addEventListener('click', () => {
-                  alert(yearMoment[j].summary);
+                  alert(eventsInRange[j].summary);
                 })
 
-                moment.appendChild(title);
+                event.appendChild(title);
             }
         }
 
