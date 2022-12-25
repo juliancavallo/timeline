@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;   
+    margin: 0;
+    color: var(--bright);
+}
+
+:root{
+    --dark: #444444;
+    --darker: #3a3a3a;
+    --bright: rgb(230, 230, 230);
+    --primary: #4e6a9f;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border-radius: 62px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: var(--darker); 
+    border-radius: 10px;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--dark);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.timeline{
+    border: 1px solid var(--bright);
+    border-radius: 5px;
+    
+    width: 90vw;
+    height: 1rem;
+    margin-top: 200px;
+
+    background-color: var(--primary);
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.year{
+    margin-top: -25px;
+}
+
+.moment-title{
+    border-radius: 5px;
+    border: 1px solid var(--bright);
+
+    padding: 10px;
+    max-width: 10rem;
+    min-width: 10rem;
+    max-height: 10rem;
+    margin-bottom: 1rem;
+
+    overflow-y: overlay;
+}
+
+.moment-title:hover{
+    cursor: pointer;
+    transition: all 0.5s ease;
+    background-color: var(--darker);
+    font-weight: bold;
+
+}
+
+.mark{
+    height: 0.5rem;
+    width: 11px;
+    
+    border: 1px solid var(--bright);
+    border-radius: 5px;
+    background-color:  var(--bright);
+
+    position: relative;
+    margin: 9px 10px;
+}
+
+.moment{
+    min-width:12rem;
+    max-width: 12rem;
+}

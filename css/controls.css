@@ -1,0 +1,43 @@
+.time-btn, .select{
+    width: 4rem;
+    height: 2rem;
+
+    color: var(--bright);
+    background-color: var(--primary);
+    border: none;
+    border-radius: 20%;
+    text-align: center;
+
+    transition: all 0.5s ease;
+}
+
+.time-btn{
+    font-size: 1rem;
+}
+
+.select-container{    
+    margin: 0px 3rem 0px 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.select-container > .select{
+    margin-top: 15px;
+}
+
+.select:hover{
+    cursor: pointer;
+}
+
+.time-btn:hover{
+    cursor: pointer;
+    color: var(--bright);
+    transform: scale(1.1);
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
