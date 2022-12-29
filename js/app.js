@@ -1,4 +1,4 @@
-import { loadInfo } from './functions.js'
+import { loadInfo } from './timelineUtils.js'
 
 export let offset = 0;
 export let range = parseInt(document.querySelector('#range').value);
